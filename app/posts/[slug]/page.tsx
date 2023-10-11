@@ -34,7 +34,7 @@ export default async function PostPage({
         .
       </h2>
       <article>
-        <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-tight md:leading-none mb-12 text-center md:text-left">
+        <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-tight md:leading-none mb-12 text-center md:text-left">
           {post.title}
         </h1>
         <div className="hidden md:block md:mb-12">

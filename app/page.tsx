@@ -12,8 +12,8 @@ import { CMS_NAME, CMS_URL } from '@/lib/constants'
 function Intro() {
   return (
     <section className="flex-col md:flex-row flex items-center md:justify-between mt-16 mb-16 md:mb-12">
-      <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-tight md:pr-8">
-        Blog.
+      <h1 className="font-serif italic text-6xl md:text-8xl font-bold tracking-tighter leading-tight md:pr-8">
+        Open Graph Demos
       </h1>
       <h2 className="text-center md:text-left text-lg mt-5 md:pl-8">
         A statically generated blog example using{' '}
@@ -58,7 +58,7 @@ function HeroPost({
       </div>
       <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 mb-20 md:mb-28">
         <div>
-          <h3 className="mb-4 text-4xl lg:text-6xl leading-tight">
+          <h3 className="font-serif font-bold mb-4 text-4xl lg:text-6xl leading-tight">
             <Link href={`/posts/${slug}`} className="hover:underline">
               {title}
             </Link>
