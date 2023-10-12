@@ -1,4 +1,5 @@
 import './styles/globals.css'
+import Logo from './logo'
 // font set: https://fonts.google.com/share?selection.family=Brygada%2B1918:ital,wght@0,400;0,700;1,400;1,700%7CIBM%2BPlex%2BMono:ital,wght@0,300;0,700;1,300;1,700%7CPublic%2BSans:ital,wght@0,100;0,300;0,700;1,100;1,300;1,700
 
 import { Brygada_1918, IBM_Plex_Mono, Public_Sans } from 'next/font/google'
@@ -30,22 +31,6 @@ const font_sans = Public_Sans({
   variable: '--font-public-sans',
 })
 
-// font-family: 'Brygada 1918', serif;
-// font-family: 'IBM Plex Mono', monospace;
-// font-family: 'Public Sans', sans-serif;
-
-// export default function RootLayout({
-//   children,
-// }: {
-//   children: React.ReactNode
-// }) {
-//   return (
-//     <html lang="en" className={`${inter.variable} ${roboto_mono.variable}`}>
-//       <body>{children}</body>
-//     </html>
-//   )
-// }
-
 
 import { EXAMPLE_PATH, CMS_NAME } from '@/lib/constants'
 
@@ -61,7 +46,7 @@ function Footer() {
       <div className="container mx-auto px-5">
         <div className="py-28 flex flex-col lg:flex-row items-center">
           <h3 className="text-4xl lg:text-5xl font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
-            Built with Next.js.
+            <Logo></Logo>
           </h3>
           <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">
             <a
