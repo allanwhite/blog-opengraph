@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Logo from './logo'
 import { draftMode } from 'next/headers'
 
 import Date from './date'
@@ -13,7 +14,7 @@ function Intro() {
   return (
     <section className="flex-col md:flex-row flex items-center md:justify-between mt-16 mb-16 md:mb-12">
       <h1 className="font-serif italic text-6xl md:text-8xl font-bold tracking-tighter leading-tight md:pr-8">
-        Open Graph Demos
+        <Logo></Logo>
       </h1>
       <h2 className="text-center md:text-left text-lg mt-5 md:pl-8">
         A statically generated blog example using{' '}
@@ -53,7 +54,7 @@ function HeroPost({
 }) {
   return (
     <section>
-      <div className="mb-8 md:mb-16">
+      <div className="mb-8 md:mb-16 aspect-video object-cover overflow-hidden rounded-lg">
         <CoverImage title={title} slug={slug} url={coverImage.url} />
       </div>
       <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 mb-20 md:mb-28">

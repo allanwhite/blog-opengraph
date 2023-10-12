@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Logo from '../../logo'
 import { draftMode } from 'next/headers'
 
 import MoreStories from '../../more-stories'
@@ -28,8 +29,8 @@ export default async function PostPage({
   return (
     <div className="container mx-auto px-5">
       <h2 className="text-2xl md:text-4xl font-bold tracking-tight md:tracking-tighter leading-tight mb-20 mt-8">
-        <Link href="/" className="hover:underline">
-          Home
+        <Link href="/" className="">
+          <Logo></Logo>
         </Link>
       </h2>
       <article>
@@ -41,7 +42,7 @@ export default async function PostPage({
             <Avatar name={post.author.name} picture={post.author.picture} />
           )}
         </div>
-        <div className="mb-8 md:mb-16 sm:mx-0">
+        <div className="mb-8 md:mb-16 sm:mx-0 aspect-video object-cover overflow-hidden rounded-lg">
           <CoverImage title={post.title} url={post.coverImage.url} />
         </div>
         <div className="max-w-2xl mx-auto">
