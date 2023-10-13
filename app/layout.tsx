@@ -39,8 +39,8 @@ export const metadata = {
   title: `Next.js and ${CMS_NAME} Example`,
   description: `This is a blog built with Next.js and ${CMS_NAME}.`,
   openGraph: {
-    title: 'Acme',
-    description: 'Acme is a...',
+    title: 'OpenGraphika',
+    description: 'OpenGraphika is a demo of Vercel/OG library for generating bitmap images.',
   },
 }
 
@@ -81,7 +81,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${font_serif.variable} ${font_mono.variable} ${font_sans.variable}`}>
       <Head>
-        <meta property="og:image" content={`/api/og`} />
+        <meta property="og:image" content={`/api/og?title=A%20simpler%20Title`} />
       </Head>
       <body>
         <section className="min-h-screen">

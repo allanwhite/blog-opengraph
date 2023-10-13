@@ -10,6 +10,44 @@ import CoverImage from '../../cover-image'
 import { Markdown } from '@/lib/markdown'
 import { getAllPosts, getPostAndMorePosts } from '@/lib/api'
 
+// aubries stuff
+import { Metadata, ResolvingMetadata } from 'next'
+ 
+type Props = {
+  params: { slug: string }
+  searchParams: { [key: string]: string | string[] | undefined }
+}
+ 
+export async function generateMetadata(
+  { params, searchParams }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  // read route params
+  // const id = params.id
+ 
+  // fetch data
+  //const product = await fetch(`https://.../${id}`).then((res) => res.json())
+  const { isEnabled } = draftMode()
+  const { post } = await getPostAndMorePosts(params.slug, isEnabled)
+
+  // optionally access and extend (rather than replace) parent metadata
+  const previousImages = (await parent).openGraph?.images || []
+ 
+  return {
+    title: post.title,
+    description: post.excerpt,
+    openGraph: {
+      images: ['/opengraph-image.jpg', ...previousImages],
+    },
+  }
+}
+ 
+// ===
+
+// export const metadata = {
+//   title: `OpenGraphika Post`,
+// }
+
 export async function generateStaticParams() {
   const allPosts = await getAllPosts(false)
 
