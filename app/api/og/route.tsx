@@ -17,12 +17,12 @@ export async function GET(request: Request) {
     const pubDate = searchParams.get('date') ?? "Some date"
     
     const serifFont = fetch(
-      new URL('Brygada1918-Regular.ttf', import.meta.url)
+      new URL('./Brygada1918-Regular.ttf', import.meta.url)
     ).then((res) => res.arrayBuffer())
     const serifFontData = await serifFont;
 
     const sansFont = fetch(
-      new URL('PublicSans-Bold.ttf', import.meta.url)
+      new URL('./PublicSans-Bold.ttf', import.meta.url)
     ).then((res) => res.arrayBuffer())
     const sansFontData = await sansFont;
     
