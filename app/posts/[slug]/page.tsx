@@ -12,7 +12,8 @@ import { getAllPosts, getPostAndMorePosts } from '@/lib/api'
 
 // aubries stuff
 import { Metadata, ResolvingMetadata } from 'next'
- 
+import { BASE_URL } from '@/lib/constants'
+
 type Props = {
   params: { slug: string }
   searchParams: { [key: string]: string | string[] | undefined }
@@ -32,12 +33,13 @@ export async function generateMetadata(
 
   // optionally access and extend (rather than replace) parent metadata
   const previousImages = (await parent).openGraph?.images || []
- 
+//  const dynamicOGImage = await. || []
+
   return {
     title: post.title,
     description: post.excerpt,
     openGraph: {
-      images: ['/opengraph-image.jpg', ...previousImages],
+      images: [`${BASE_URL}/api/og?title=${post.title}`, ...previousImages],
     },
   }
 }

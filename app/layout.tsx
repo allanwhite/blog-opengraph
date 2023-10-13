@@ -3,7 +3,7 @@ import Logo from './logo'
 // font set: https://fonts.google.com/share?selection.family=Brygada%2B1918:ital,wght@0,400;0,700;1,400;1,700%7CIBM%2BPlex%2BMono:ital,wght@0,300;0,700;1,300;1,700%7CPublic%2BSans:ital,wght@0,100;0,300;0,700;1,100;1,300;1,700
 
 import { Brygada_1918, IBM_Plex_Mono, Public_Sans } from 'next/font/google'
- 
+
 const font_serif = Brygada_1918({
   subsets: ['latin'],
   weight: 'variable',
@@ -31,8 +31,7 @@ const font_sans = Public_Sans({
   variable: '--font-public-sans',
 })
 
-
-import { EXAMPLE_PATH, CMS_NAME } from '@/lib/constants'
+import { EXAMPLE_PATH, CMS_NAME, BASE_URL } from '@/lib/constants'
 import Head from 'next/head'
 
 export const metadata = {
@@ -80,9 +79,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${font_serif.variable} ${font_mono.variable} ${font_sans.variable}`}>
-      <Head>
-        <meta property="og:image" content={`/api/og?title=A%20simpler%20Title`} />
-      </Head>
+
       <body>
         <section className="min-h-screen">
           <main>{children}</main>
