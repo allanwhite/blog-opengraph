@@ -33,10 +33,15 @@ const font_sans = Public_Sans({
 
 
 import { EXAMPLE_PATH, CMS_NAME } from '@/lib/constants'
+import Head from 'next/head'
 
 export const metadata = {
   title: `Next.js and ${CMS_NAME} Example`,
   description: `This is a blog built with Next.js and ${CMS_NAME}.`,
+  openGraph: {
+    title: 'Acme',
+    description: 'Acme is a...',
+  },
 }
 
 
@@ -75,6 +80,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${font_serif.variable} ${font_mono.variable} ${font_sans.variable}`}>
+      <Head>
+        <meta property="og:image" content={`/api/og`} />
+      </Head>
       <body>
         <section className="min-h-screen">
           <main>{children}</main>
