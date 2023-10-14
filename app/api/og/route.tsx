@@ -2,36 +2,50 @@ import { ImageResponse } from 'next/server';
 // App router includes @vercel/og.
 // No need to install it.
 import Logo from '../../logo'
+//import DateComponent from '../../date'
+import Date from '../../date'
+import ContentfulImage from '../../../lib/contentful-image'
 
 export const runtime = 'edge';
  
 export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
- 
+    
     // ?title=<title>
     const hasTitle = searchParams.has('title');
     const title = hasTitle
       ? searchParams.get('title')?.slice(0, 100)
-      : 'My default title'
-    const pubDate = searchParams.get('date') ?? "Some date"
-    
+      : 'OpenGraphika Post'
+
+    const publishDate =
+      searchParams.get('date') || new Date().toLocaleDateString();
+
+    // const hasDate = searchParams.get('date')
+    // const articleDate = hasDate
+    //   ? searchParams.get('date')?.toString
+    //   : 'Today'
+    //const hasImage = searchParams.has('')
+    const defaultImageRemote = 'https://images.ctfassets.net/col7w9urljg1/3SkQKUUagpav7v1FkFtJ50/7e72bfa8c1d8bf66a8e94eaa883b9889/Bonneville_Flats_Sunset-18.jpg?w=1200&h=680&fit=thumb'
+    const hasImage = searchParams.has('coverImage');
+    const entryImage = hasImage
+      ? searchParams.get('coverImage.url')
+      : defaultImageRemote
+
+    const image = await fetch(new URL(defaultImageRemote, import.meta.url)).then(
+      (res) => res.arrayBuffer(),
+    );
+
     const serifFont = fetch(
-      new URL('../../../public/fonts/Brygada1918-Regular.ttf', import.meta.url)
+      new URL('../../../public/fonts/Besley-Regular.ttf', import.meta.url)
     ).then((res) => res.arrayBuffer());
     const serifFontData = await serifFont;
 
     const sansFont = fetch(
       new URL('../../../public/fonts/PublicSans-Bold.ttf', import.meta.url)
     ).then((res) => res.arrayBuffer());
-    const sansFontData = await sansFont;
-    
+    const sansFontData = await sansFont;    
     //console.log(serifFont);
-
-
-    const image = await fetch(new URL('opengraph-image-bg.png', import.meta.url)).then(
-      (res) => res.arrayBuffer(),
-    );
 
     return new ImageResponse(
       (
@@ -54,12 +68,13 @@ export async function GET(request: Request) {
         >
           <img 
             width="1200" height="680" 
-            src={image}
+            src={entryImage}
               style={{
                 display: 'flex',
                 position: 'absolute',
                 top: 0,
                 left: 0,
+                opacity: 0.8,
               }}
           />
           <div
@@ -88,23 +103,43 @@ export async function GET(request: Request) {
           >
             <div
               style={{
-                letterSpacing: '0.2em',
+                display: 'flex',
+                letterSpacing: '0.3em',
                 textTransform: 'uppercase',
+                marginBottom: '0.2rem',
                 fontWeight: 'bold',
                 fontFamily: 'Public',
+                fontSize: '2rem',
               }}
               >
               Blog
             </div>
             <div
               style={{
+                display: 'flex',
+                fontSize: '1.5rem',
+                fontWeight: 'light',
+                fontFamily: 'Public',
+                letterSpacing: '0em',
+                opacity: 0.5,
+                marginBottom: '1.2rem',
+              }}
+              >
+              <Date dateString={publishDate} />
+              
+            </div>
+            <div
+              style={{
+                display: 'flex',
                 letterSpacing: '-0.05em',
-                fontFamily: 'Brygada',
+                lineHeight: 0.85,
+                marginBottom: '0.8rem',
+                fontFamily: 'Besley',
                 fontSize: '5rem',
               }}
               >
                 {title}
-              </div>
+            </div>
           </div>
         </div>
       ),
@@ -113,7 +148,7 @@ export async function GET(request: Request) {
         height: 630,
         fonts:[
           {
-            name: 'Brygada',
+            name: 'Besley',
             data: await serifFontData,
             style: 'normal',
             weight: 400,

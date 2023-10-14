@@ -36,6 +36,10 @@ export async function generateMetadata(
 //  const dynamicOGImage = await. || []
 
   return {
+    metadataBase: new URL(`${BASE_URL}`),
+    alternates: {
+      canonical: '/',
+    },
     title: post.title,
     description: post.excerpt,
     openGraph: {
@@ -43,11 +47,18 @@ export async function generateMetadata(
     },
   }
 }
- 
-// ===
 
 // export const metadata = {
-//   title: `OpenGraphika Post`,
+//   metadataBase: new URL(`${BASE_URL}`),
+//   alternates: {
+//     canonical: '/',
+//   },
+//   title: `Next.js and ${CMS_NAME} Example`,
+//   description: `This is a blog built with Next.js and ${CMS_NAME}.`,
+//   openGraph: {
+//     title: 'OpenGraphika',
+//     description: 'OpenGraphika is a demo of Vercel/OG library for generating bitmap images.',
+//   },
 // }
 
 export async function generateStaticParams() {

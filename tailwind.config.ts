@@ -11,7 +11,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ['var(--font-public-sans)'],
-        serif: ['var(--font-brygada)'],
+        serif: ['var(--font-besley)'],
         mono: ['var(--font-plex-mono)'],
       },
     },
