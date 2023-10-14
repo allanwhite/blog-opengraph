@@ -43,7 +43,7 @@ export async function generateMetadata(
     title: post.title,
     description: post.excerpt,
     openGraph: {
-      images: [`${BASE_URL}/api/og?title=${post.title}`, ...previousImages],
+      images: [`${BASE_URL}/api/og?title=${post.title}&date=${post.date}`, ...previousImages],
     },
   }
 }
