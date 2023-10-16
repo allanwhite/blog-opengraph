@@ -5,6 +5,7 @@ import Logo from '../../logo'
 //import DateComponent from '../../date'
 import Date from '../../date'
 import ContentfulImage from '../../../lib/contentful-image'
+import { ogImageParams } from '@/lib/constants';
 
 export const runtime = 'edge';
  
@@ -26,11 +27,13 @@ export async function GET(request: Request) {
     //   ? searchParams.get('date')?.toString
     //   : 'Today'
     //const hasImage = searchParams.has('')
-    const defaultImageRemote = 'https://images.ctfassets.net/col7w9urljg1/3SkQKUUagpav7v1FkFtJ50/7e72bfa8c1d8bf66a8e94eaa883b9889/Bonneville_Flats_Sunset-18.jpg?w=1200&h=680&fit=thumb'
+    const defaultImageRemote = 'https://images.ctfassets.net/col7w9urljg1/3SkQKUUagpav7v1FkFtJ50/7e72bfa8c1d8bf66a8e94eaa883b9889/Bonneville_Flats_Sunset-18.jpg?' + ogImageParams
     const hasImage = searchParams.has('entryImage'); // passed from slug route
     const entryImage = hasImage
       ? searchParams.get('entryImage')
       : defaultImageRemote
+
+      console.log(entryImage + ogImageParams);
 
     const image = await fetch(new URL(defaultImageRemote, import.meta.url)).then(
       (res) => res.arrayBuffer(),
@@ -68,6 +71,7 @@ export async function GET(request: Request) {
         >
           <img 
             width="1200" height="680" 
+            // @ts-ignore 
             src={entryImage}
               style={{
                 display: 'flex',

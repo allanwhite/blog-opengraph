@@ -12,7 +12,7 @@ import { getAllPosts, getPostAndMorePosts } from '@/lib/api'
 
 // aubries stuff
 import { Metadata, ResolvingMetadata } from 'next'
-import { BASE_URL } from '@/lib/constants'
+import { BASE_URL, ogImageParams } from '@/lib/constants'
 
 type Props = {
   params: { slug: string }
@@ -43,7 +43,7 @@ export async function generateMetadata(
     title: post.title,
     description: post.excerpt,
     openGraph: {
-      images: [`${BASE_URL}/api/og?title=${post.title}&date=${post.date}&entryImage=${post.coverImage.url}`, ...previousImages],
+      images: [`${BASE_URL}/api/og?title=${post.title}&date=${post.date}&entryImage=${post.coverImage.url}?${ogImageParams}`, ...previousImages],
     },
   }
 }
