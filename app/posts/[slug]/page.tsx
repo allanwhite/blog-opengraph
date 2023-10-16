@@ -19,20 +19,13 @@ type Props = {
   searchParams: { [key: string]: string | string[] | undefined }
 }
 
-// export function getBaseUrl() {
-//   if (typeof window !== 'undefined') return '';
-//   const vc = process.env.VERCEL_URL;
-//   if (vc) return `https://${vc}`;
-//   return 'http://localhost:3000';
-// }
-
+// process.env.NEXT_PUBLIC_VERCEL_URL
 export async function generateMetadata(
   { params, searchParams }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   // read route params
   // const id = params.id
- 
   // fetch data
   //const product = await fetch(`https://.../${id}`).then((res) => res.json())
   const { isEnabled } = draftMode()
@@ -43,7 +36,7 @@ export async function generateMetadata(
 //  const dynamicOGImage = await. || []
 
   return {
-    metadataBase: new URL(`${BASE_URL}`),
+    metadataBase: new URL(`${process.env.NEXT_PUBLIC_VERCEL_URL}`),
     alternates: {
       canonical: '/',
     },
@@ -59,23 +52,10 @@ export async function generateMetadata(
       },
     },
     openGraph: {
-      images: [`${BASE_URL}/api/og?title=${post.title}&date=${post.date}&entryImage=${post.coverImage.url}?${ogImageParams}`, ...previousImages],
+      images: [`${process.env.NEXT_PUBLIC_VERCEL_URL}api/og?title=${post.title}&date=${post.date}&entryImage=${post.coverImage.url}?${ogImageParams}`, ...previousImages],
     },
   }
 }
-
-// export const metadata = {
-//   metadataBase: new URL(`${BASE_URL}`),
-//   alternates: {
-//     canonical: '/',
-//   },
-//   title: `Next.js and ${CMS_NAME} Example`,
-//   description: `This is a blog built with Next.js and ${CMS_NAME}.`,
-//   openGraph: {
-//     title: 'OpenGraphika',
-//     description: 'OpenGraphika is a demo of Vercel/OG library for generating bitmap images.',
-//   },
-// }
 
 export async function generateStaticParams() {
   const allPosts = await getAllPosts(false)
@@ -104,6 +84,10 @@ export default async function PostPage({
         <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-tight md:leading-none mb-12 text-center md:text-left">
           {post.title}
         </h1>
+        {/* <h2>
+          {process.env.NEXT_PUBLIC_VERCEL_URL}
+          {process.env.VERCEL_URL}
+        </h2> */}
         <div className="hidden md:block md:mb-12">
           {post.author && (
             <Avatar name={post.author.name} picture={post.author.picture} />
