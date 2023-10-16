@@ -84,10 +84,6 @@ export default async function PostPage({
         <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-tight md:leading-none mb-12 text-center md:text-left">
           {post.title}
         </h1>
-        {/* <h2>
-          {process.env.NEXT_PUBLIC_VERCEL_URL}
-          {process.env.VERCEL_URL}
-        </h2> */}
         <div className="hidden md:block md:mb-12">
           {post.author && (
             <Avatar name={post.author.name} picture={post.author.picture} />
