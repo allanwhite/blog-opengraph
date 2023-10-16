@@ -18,7 +18,14 @@ type Props = {
   params: { slug: string }
   searchParams: { [key: string]: string | string[] | undefined }
 }
- 
+
+// export function getBaseUrl() {
+//   if (typeof window !== 'undefined') return '';
+//   const vc = process.env.VERCEL_URL;
+//   if (vc) return `https://${vc}`;
+//   return 'http://localhost:3000';
+// }
+
 export async function generateMetadata(
   { params, searchParams }: Props,
   parent: ResolvingMetadata
@@ -42,6 +49,15 @@ export async function generateMetadata(
     },
     title: post.title,
     description: post.excerpt,
+    icons: {
+      icon: '/favicons/favicon-16x16.png',
+      shortcut: '/favicons/favicon-32x32.png',
+      apple: '/favicons/apple-touch-icon.png',
+      other: {
+        rel: 'apple-touch-icon-precomposed',
+        url: '/favicons/apple-touch-icon.png',
+      },
+    },
     openGraph: {
       images: [`${BASE_URL}/api/og?title=${post.title}&date=${post.date}&entryImage=${post.coverImage.url}?${ogImageParams}`, ...previousImages],
     },

@@ -21,6 +21,15 @@ export const metadata = {
     title: 'OpenGraphika',
     description: 'OpenGraphika is a demo of Vercel/OG library for generating bitmap images.',
   },
+  icons: {
+    icon: '/favicons/favicon-16x16.png',
+    shortcut: '/favicons/favicon-32x32.png',
+    apple: '/favicons/apple-touch-icon.png',
+    other: {
+      rel: 'apple-touch-icon-precomposed',
+      url: '/favicons/apple-touch-icon.png',
+    },
+  },
 }
 
 

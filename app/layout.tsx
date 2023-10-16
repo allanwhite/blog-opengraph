@@ -1,6 +1,7 @@
 import './styles/globals.css'
 import Logo from './logo'
 // font set: https://fonts.google.com/share?selection.family=Brygada%2B1918:ital,wght@0,400;0,700;1,400;1,700%7CIBM%2BPlex%2BMono:ital,wght@0,300;0,700;1,300;1,700%7CPublic%2BSans:ital,wght@0,100;0,300;0,700;1,100;1,300;1,700
+//import { Metadata, ResolvingMetadata } from 'next'
 
 import { Besley, IBM_Plex_Mono, Public_Sans } from 'next/font/google'
 
