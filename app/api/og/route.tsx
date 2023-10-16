@@ -19,7 +19,7 @@ export async function GET(request: Request) {
       : 'OpenGraphika Post'
 
     const publishDate =
-      searchParams.get('date') || new Date().toLocaleDateString();
+      searchParams.get('date') || 'today';
 
     // const hasDate = searchParams.get('date')
     // const articleDate = hasDate
@@ -27,9 +27,9 @@ export async function GET(request: Request) {
     //   : 'Today'
     //const hasImage = searchParams.has('')
     const defaultImageRemote = 'https://images.ctfassets.net/col7w9urljg1/3SkQKUUagpav7v1FkFtJ50/7e72bfa8c1d8bf66a8e94eaa883b9889/Bonneville_Flats_Sunset-18.jpg?w=1200&h=680&fit=thumb'
-    const hasImage = searchParams.has('coverImage');
+    const hasImage = searchParams.has('entryImage'); // passed from slug route
     const entryImage = hasImage
-      ? searchParams.get('coverImage.url')
+      ? searchParams.get('entryImage')
       : defaultImageRemote
 
     const image = await fetch(new URL(defaultImageRemote, import.meta.url)).then(
