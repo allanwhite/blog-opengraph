@@ -11,7 +11,7 @@ import { getAllPosts } from '@/lib/api'
 import { CMS_NAME, CMS_URL, BASE_URL } from '@/lib/constants'
 
 export const metadata = {
-  metadataBase: new URL(`${BASE_URL}`),
+  metadataBase: new URL(`${process.env.NEXT_PUBLIC_VERCEL_URL}`),
   alternates: {
     canonical: '/',
   },
