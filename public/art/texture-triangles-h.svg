@@ -1,20 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 326 40">
-  <g clip-path="url(#a)">
-    <mask id="b" width="330" height="40" x="11" y="1" maskUnits="userSpaceOnUse" style="mask-type:alpha">
-      <path fill="#fff" d="m25 21 14 19H11l14-19Zm55 0 13 19H66l14-19Zm109 0 14 19h-27l13-19ZM93 1l14 19H80L93 1Zm151 20 14 19h-28l14-19ZM148 1l14 19h-27l13-19Zm151 20 14 19h-28l14-19ZM203 1l14 19h-28l14-19Zm-96 20 14 19H93l14-19Zm55 0 14 19h-28l14-19ZM66 1l14 19H52L66 1Zm151 20 13 19h-27l14-19ZM121 1l13 19h-27l14-19Zm151 20 13 19h-27l14-19Zm54 0 14 19h-27l13-19ZM230 1l14 19h-27l13-19Z"/>
-    </mask>
-    <g mask="url(#b)">
-      <path fill="url(#c)" d="M344-17h88v339h-88z" transform="rotate(90 344 -17)"/>
-    </g>
-  </g>
-  <defs>
-    <linearGradient id="c" x1="352.1" x2="471.8" y1="288.2" y2="264" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#D260CA"/>
-      <stop offset=".5" stop-color="#7E4DFD"/>
-      <stop offset="1" stop-color="#0C8EB3"/>
-    </linearGradient>
-    <clipPath id="a">
-      <path fill="#fff" d="M0 0h326v40H0z"/>
-    </clipPath>
-  </defs>
+<svg width="530" height="64" viewBox="0 0 530 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="texture-triangles-h" clip-path="url(#clip0_142_793)">
+<g id="Group 4">
+<mask id="mask0_142_793" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="17" y="1" width="536" height="64">
+<g id="Group 3">
+<path id="Polygon 4" d="M39.7141 32.7504L61.9831 64.4507H17.445L39.7141 32.7504Z" fill="white"/>
+<path id="Polygon 6" d="M128.902 32.7504L151.171 64.4507H106.633L128.902 32.7504Z" fill="white"/>
+<path id="Polygon 10" d="M307.279 32.7501L329.548 64.4505H285.01L307.279 32.7501Z" fill="white"/>
+<path id="Polygon 16" d="M151.228 1L173.497 32.7004H128.959L151.228 1Z" fill="white"/>
+<path id="Polygon 12" d="M396.468 32.7501L418.737 64.4505H374.198L396.468 32.7501Z" fill="white"/>
+<path id="Polygon 17" d="M240.417 1L262.686 32.7004H218.148L240.417 1Z" fill="white"/>
+<path id="Polygon 14" d="M485.656 32.7501L507.925 64.4505H463.387L485.656 32.7501Z" fill="white"/>
+<path id="Polygon 18" d="M329.605 1L351.874 32.7004H307.336L329.605 1Z" fill="white"/>
+<path id="Polygon 7" d="M173.43 32.7504L195.699 64.4507H151.161L173.43 32.7504Z" fill="white"/>
+<path id="Polygon 9" d="M262.618 32.7504L284.887 64.4507H240.349L262.618 32.7504Z" fill="white"/>
+<path id="Polygon 19" d="M106.568 1L128.837 32.7004H84.2985L106.568 1Z" fill="white"/>
+<path id="Polygon 11" d="M351.807 32.7501L374.076 64.4505H329.538L351.807 32.7501Z" fill="white"/>
+<path id="Polygon 20" d="M195.756 1L218.025 32.7004H173.487L195.756 1Z" fill="white"/>
+<path id="Polygon 13" d="M440.995 32.7501L463.264 64.4505H418.726L440.995 32.7501Z" fill="white"/>
+<path id="Polygon 15" d="M530.183 32.7504L552.453 64.4507H507.914L530.183 32.7504Z" fill="white"/>
+<path id="Polygon 22" d="M374.133 1L396.402 32.7004H351.864L374.133 1Z" fill="white"/>
+</g>
+</mask>
+<g mask="url(#mask0_142_793)">
+<rect id="Rectangle 20" x="558.932" y="-28.4895" width="143.556" height="551.888" transform="rotate(90 558.932 -28.4895)" fill="url(#paint0_linear_142_793)"/>
+</g>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear_142_793" x1="572.045" y1="468.21" x2="766.736" y2="428.752" gradientUnits="userSpaceOnUse">
+<stop stop-color="#D260CA"/>
+<stop offset="0.484375" stop-color="#7E4DFD"/>
+<stop offset="1" stop-color="#0C8EB3"/>
+</linearGradient>
+<clipPath id="clip0_142_793">
+<rect width="530" height="64" fill="white"/>
+</clipPath>
+</defs>
 </svg>
