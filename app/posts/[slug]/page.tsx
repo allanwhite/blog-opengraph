@@ -19,7 +19,6 @@ type Props = {
   searchParams: { [key: string]: string | string[] | undefined }
 }
 
-// process.env.NEXT_PUBLIC_VERCEL_URL
 export async function generateMetadata(
   { params, searchParams }: Props,
   parent: ResolvingMetadata
@@ -36,7 +35,7 @@ export async function generateMetadata(
 //  const dynamicOGImage = await. || []
 
   return {
-    metadataBase: new URL(`${process.env.NEXT_PUBLIC_VERCEL_URL}`),
+    metadataBase: new URL(`${process.env.PROTOCOL}${process.env.NEXT_PUBLIC_VERCEL_URL}`),
     alternates: {
       canonical: '/',
     },
@@ -52,7 +51,7 @@ export async function generateMetadata(
       },
     },
     openGraph: {
-      images: [`${process.env.NEXT_PUBLIC_VERCEL_URL}api/og?title=${post.title}&date=${post.date}&entryImage=${post.coverImage.url}?${ogImageParams}`, ...previousImages],
+      images: [`${process.env.PROTOCOL}${process.env.NEXT_PUBLIC_VERCEL_URL}/api/og?title=${post.title}&date=${post.date}&entryImage=${post.coverImage.url}?${ogImageParams}`, ...previousImages],
     },
   }
 }
