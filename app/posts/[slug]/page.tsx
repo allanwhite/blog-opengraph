@@ -51,7 +51,11 @@ export async function generateMetadata(
       },
     },
     openGraph: {
-      images: [`${process.env.PROTOCOL}${process.env.NEXT_PUBLIC_VERCEL_URL}/api/og?title=${post.title}&date=${post.date}&entryImage=${post.coverImage.url}?${ogImageParams}`, ...previousImages],
+      //images: [`${process.env.PROTOCOL}${process.env.NEXT_PUBLIC_VERCEL_URL}/api/og?title=${post.title}&date=${post.date}&entryImage=${post.coverImage.url}?${ogImageParams}`, ...previousImages],
+      images: [
+        { url: `${process.env.PROTOCOL}${process.env.NEXT_PUBLIC_VERCEL_URL}/api/og?title=${post.title}&date=${post.date}&entryImage=${post.coverImage.url}?${ogImageParams}` },
+        ...previousImages,
+      ]
     },
   }
 }
