@@ -1,47 +1,59 @@
 const textureTriangles = () => {
     return (
-        <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 702 86'>
-          <g clipPath='url(#a)'>
-            <mask
-              id='b'
-              width='729'
-              height='87'
-              x='4'
-              y='0'
-              maskUnits='userSpaceOnUse'
-              style={{ maskType: "alpha" }}
-            >
-              <path
-                fill='#fff'
-                d='M35 43l30 43H5l30-43zm121 0l31 43h-61l30-43zm243 0l30 43h-60l30-43zM187 0l30 43h-61l31-43zm333 43l31 43h-61l30-43zM308 0l30 43h-60l30-43zm334 43l30 43h-61l31-43zM429 0l31 43h-61l30-43zM217 43l30 43h-60l30-43zm121 0l31 43h-61l30-43zM126 0l30 43H96l30-43zm334 43l30 43h-61l31-43zM247 0l31 43h-61l30-43zm334 43l30 43h-60l30-43zm121 0l31 43h-61l30-43zM490 0l30 43h-60l30-43z'
-              ></path>
-            </mask>
-            <g mask='url(#b)'>
-              <path
-                fill='url(#c)'
-                d='M742-40h195v751H742z'
-                transform='rotate(90 741 -40)'
-              ></path>
-            </g>
+
+      // <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 530 65'>
+      //   <g fill='#000' clipPath='url(#a)'>
+      //     <path d='M40 33l22 31H17l23-31zm89 0l22 31h-44l22-31zm178 0l23 31h-45l22-31zM151 1l22 32h-44l22-32zm245 32l23 31h-45l22-31zM240 1l23 32h-45l22-32zm246 32l22 31h-45l23-31zM330 1l22 32h-45l23-32zM173 33l23 31h-45l22-31zm90 0l22 31h-45l23-31zM107 1l22 32H84l23-32zm245 32l22 31h-44l22-31zM196 1l22 32h-45l23-32zm245 32l22 31h-44l22-31zm89 0l22 31h-44l22-31zM374 1l22 32h-44l22-32z'></path>
+      //   </g>
+      //   <defs>
+      //     <clipPath id='a'>
+      //       <path fill='#fff' d='M0 1h530v64H0z'></path>
+      //     </clipPath>
+      //   </defs>
+      // </svg>
+      
+      <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 530 64'>
+        <g clipPath='url(#a)'>
+          <mask
+            id='b'
+            width='536'
+            height='64'
+            x='17'
+            y='1'
+            maskUnits='userSpaceOnUse'
+            style={{ maskType: "alpha" }}
+          >
+            <path
+              fill='#fff'
+              d='M40 33l22 31H17l23-31zm89 0l22 31h-44l22-31zm178 0l23 31h-45l22-31zM151 1l22 32h-44l22-32zm245 32l23 31h-45l22-31zM240 1l23 32h-45l22-32zm246 32l22 31h-45l23-31zM330 1l22 32h-45l23-32zM173 33l23 31h-45l22-31zm90 0l22 31h-45l23-31zM107 1l22 32H84l23-32zm245 32l22 31h-44l22-31zM196 1l22 32h-45l23-32zm245 32l22 31h-44l22-31zm89 0l22 31h-44l22-31zM374 1l22 32h-44l22-32z'
+            ></path>
+          </mask>
+          <g mask='url(#b)'>
+            <path
+              fill='url(#c)'
+              d='M559-28h144v551H559z'
+              transform='rotate(90 559 -28)'
+            ></path>
           </g>
-          <defs>
-            <linearGradient
-              id='c'
-              x1='759.3'
-              x2='1024.2'
-              y1='635.7'
-              y2='582'
-              gradientUnits='userSpaceOnUse'
-            >
-              <stop stopColor='#D260CA'></stop>
-              <stop offset='0.5' stopColor='#7E4DFD'></stop>
-              <stop offset='1' stopColor='#0C8EB3'></stop>
-            </linearGradient>
-            <clipPath id='a'>
-              <path fill='#fff' d='M0 0h702v86H0z'></path>
-            </clipPath>
-          </defs>
-        </svg>
+        </g>
+        <defs>
+          <linearGradient
+            id='c'
+            x1='572'
+            x2='766.7'
+            y1='468.2'
+            y2='428.8'
+            gradientUnits='userSpaceOnUse'
+          >
+            <stop stopColor='#D260CA'></stop>
+            <stop offset='0.5' stopColor='#7E4DFD'></stop>
+            <stop offset='1' stopColor='#0C8EB3'></stop>
+          </linearGradient>
+          <clipPath id='a'>
+            <path fill='#fff' d='M0 0h530v64H0z'></path>
+          </clipPath>
+        </defs>
+      </svg>
       );
     };
 
