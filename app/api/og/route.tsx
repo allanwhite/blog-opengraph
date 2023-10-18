@@ -7,6 +7,7 @@ import Date from '../../date'
 // import ContentfulImage from '../../../lib/contentful-image'
 import { ogImageParams } from '@/lib/constants';
 import LogoWide from '@/app/logo-white';
+import TextureTriangles from '@/app/texture-triangles';
 
 export const runtime = 'edge';
  
@@ -28,7 +29,7 @@ export async function GET(request: Request) {
     //   ? searchParams.get('date')?.toString
     //   : 'Today'
     //const hasImage = searchParams.has('')
-    const defaultImageRemote = 'https://images.ctfassets.net/col7w9urljg1/3SkQKUUagpav7v1FkFtJ50/7e72bfa8c1d8bf66a8e94eaa883b9889/Bonneville_Flats_Sunset-18.jpg?' + ogImageParams
+    const defaultImageRemote = `https://images.ctfassets.net/col7w9urljg1/3SkQKUUagpav7v1FkFtJ50/7e72bfa8c1d8bf66a8e94eaa883b9889/Bonneville_Flats_Sunset-18.jpg?${ogImageParams}`
     const hasImage = searchParams.has('entryImage'); // passed from slug route
     const entryImage = hasImage
       ? searchParams.get('entryImage')
@@ -85,6 +86,19 @@ export async function GET(request: Request) {
           <div
             style={{
               display: 'flex',
+              flexDirection: 'column',
+              position: 'absolute',
+              bottom: 0,
+              left: 0,
+              width: '100%',
+              height: '70%',
+              backgroundImage: 'linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 14%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0) 100%)',
+            }}
+          >
+          </div>
+          <div
+            style={{
+              display: 'flex',
               position: 'absolute',
               right: '4rem',
               top: '4rem',
@@ -96,8 +110,18 @@ export async function GET(request: Request) {
           <div
             style={{
               display: 'flex',
+              position: 'absolute',
+              bottom: 0,
+              right: '0rem',
+            }}
+          >
+          <TextureTriangles></TextureTriangles>
+          </div>
+          <div
+            style={{
+              display: 'flex',
               flexDirection: 'column',
-              margin: '6rem 5.5rem',
+              margin: '8rem 6.5rem',
               color: 'white',
               padding: 0,
               whiteSpace: 'pre-wrap',
@@ -124,7 +148,7 @@ export async function GET(request: Request) {
                 fontWeight: 'light',
                 fontFamily: 'Public',
                 letterSpacing: '0em',
-                opacity: 0.5,
+                opacity: 1,
                 marginBottom: '0.5rem',
               }}
               >
