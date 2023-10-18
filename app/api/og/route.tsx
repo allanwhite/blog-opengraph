@@ -1,11 +1,12 @@
 import { ImageResponse } from 'next/server';
 // App router includes @vercel/og.
 // No need to install it.
-import Logo from '../../logo'
+// import Logo from '../../logo'
 //import DateComponent from '../../date'
 import Date from '../../date'
-import ContentfulImage from '../../../lib/contentful-image'
+// import ContentfulImage from '../../../lib/contentful-image'
 import { ogImageParams } from '@/lib/constants';
+import LogoWide from '@/app/logo-white';
 
 export const runtime = 'edge';
  
@@ -85,22 +86,20 @@ export async function GET(request: Request) {
             style={{
               display: 'flex',
               position: 'absolute',
-              right: '3rem',
-              top: '3rem',
+              right: '4rem',
+              top: '4rem',
               color: 'white',
             }}
           >
-          <Logo></Logo>
+          <LogoWide></LogoWide>
           </div>
           <div
             style={{
               display: 'flex',
               flexDirection: 'column',
-              fontSize: 40,
-              margin: '2.5em 2em',
+              margin: '6rem 5.5rem',
               color: 'white',
               padding: 0,
-              lineHeight: 1.3,
               whiteSpace: 'pre-wrap',
               textShadow: '2px 2px 6px hsl(0 0% 0% / 0.6)',
             }}
@@ -126,20 +125,19 @@ export async function GET(request: Request) {
                 fontFamily: 'Public',
                 letterSpacing: '0em',
                 opacity: 0.5,
-                marginBottom: '1.2rem',
+                marginBottom: '0.5rem',
               }}
               >
               <Date dateString={publishDate} />
-              
             </div>
             <div
               style={{
                 display: 'flex',
-                letterSpacing: '-0.05em',
+                letterSpacing: '0em',
                 lineHeight: 0.85,
-                marginBottom: '0.8rem',
+                marginBottom: '0rem',
                 fontFamily: 'Besley',
-                fontSize: '5rem',
+                fontSize: '4rem',
               }}
               >
                 {title}
