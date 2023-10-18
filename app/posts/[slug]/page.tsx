@@ -10,6 +10,52 @@ import CoverImage from '../../cover-image'
 import { Markdown } from '@/lib/markdown'
 import { getAllPosts, getPostAndMorePosts } from '@/lib/api'
 
+// aubries stuff
+import { Metadata, ResolvingMetadata } from 'next'
+import { BASE_URL, ogImageParams } from '@/lib/constants'
+
+type Props = {
+  params: { slug: string }
+  searchParams: { [key: string]: string | string[] | undefined }
+}
+
+export async function generateMetadata(
+  { params, searchParams }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  // read route params
+  // const id = params.id
+  // fetch data
+  //const product = await fetch(`https://.../${id}`).then((res) => res.json())
+  const { isEnabled } = draftMode()
+  const { post } = await getPostAndMorePosts(params.slug, isEnabled)
+
+  // optionally access and extend (rather than replace) parent metadata
+  const previousImages = (await parent).openGraph?.images || []
+//  const dynamicOGImage = await. || []
+
+  return {
+    metadataBase: new URL(`${process.env.PROTOCOL}${process.env.NEXT_PUBLIC_VERCEL_URL}`),
+    alternates: {
+      canonical: '/',
+    },
+    title: post.title,
+    description: post.excerpt,
+    icons: {
+      icon: '/favicons/favicon-16x16.png',
+      shortcut: '/favicons/favicon-32x32.png',
+      apple: '/favicons/apple-touch-icon.png',
+      other: {
+        rel: 'apple-touch-icon-precomposed',
+        url: '/favicons/apple-touch-icon.png',
+      },
+    },
+    openGraph: {
+      images: [`${process.env.PROTOCOL}${process.env.NEXT_PUBLIC_VERCEL_URL}/api/og?title=${post.title}&date=${post.date}&entryImage=${post.coverImage.url}?${ogImageParams}`, ...previousImages],
+    },
+  }
+}
+
 export async function generateStaticParams() {
   const allPosts = await getAllPosts(false)
 

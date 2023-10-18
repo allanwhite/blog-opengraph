@@ -8,7 +8,30 @@ import Avatar from './avatar'
 import MoreStories from './more-stories'
 
 import { getAllPosts } from '@/lib/api'
-import { CMS_NAME, CMS_URL } from '@/lib/constants'
+import { CMS_NAME, CMS_URL, BASE_URL } from '@/lib/constants'
+
+export const metadata = {
+  metadataBase: new URL(`${process.env.PROTOCOL}${process.env.NEXT_PUBLIC_VERCEL_URL}`),
+  alternates: {
+    canonical: '/',
+  },
+  title: `Next.js and ${CMS_NAME} Example`,
+  description: `This is a blog built with Next.js and ${CMS_NAME}.`,
+  openGraph: {
+    title: 'OpenGraphika',
+    description: 'OpenGraphika is a demo of Vercel/OG library for generating bitmap images.',
+  },
+  icons: {
+    icon: '/favicons/favicon-16x16.png',
+    shortcut: '/favicons/favicon-32x32.png',
+    apple: '/favicons/apple-touch-icon.png',
+    other: {
+      rel: 'apple-touch-icon-precomposed',
+      url: '/favicons/apple-touch-icon.png',
+    },
+  },
+}
+
 
 function Intro() {
   return (
@@ -17,7 +40,7 @@ function Intro() {
         <Logo></Logo>
       </h1>
       <h2 className="text-center md:text-left text-lg mt-5 md:pl-8">
-        A statically generated blog example using{' '}
+        An Open Graph enabled blog{' '}
         <a
           href="https://nextjs.org/"
           className="underline hover:text-success duration-200 transition-colors"

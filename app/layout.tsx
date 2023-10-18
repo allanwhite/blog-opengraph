@@ -1,15 +1,25 @@
 import './styles/globals.css'
 import Logo from './logo'
 // font set: https://fonts.google.com/share?selection.family=Brygada%2B1918:ital,wght@0,400;0,700;1,400;1,700%7CIBM%2BPlex%2BMono:ital,wght@0,300;0,700;1,300;1,700%7CPublic%2BSans:ital,wght@0,100;0,300;0,700;1,100;1,300;1,700
+//import { Metadata, ResolvingMetadata } from 'next'
 
-import { Brygada_1918, IBM_Plex_Mono, Public_Sans } from 'next/font/google'
+import { Besley, IBM_Plex_Mono, Public_Sans } from 'next/font/google'
+
+// const font_serif = Brygada_1918({
+//   subsets: ['latin'],
+//   weight: 'variable',
+//   style: ['normal', 'italic'],
+//   display: 'swap',
+//   variable: '--font-brygada',
+//   adjustFontFallback: false,
+// })
  
-const font_serif = Brygada_1918({
+const font_serif = Besley({
   subsets: ['latin'],
   weight: 'variable',
   style: ['normal', 'italic'],
   display: 'swap',
-  variable: '--font-brygada',
+  variable: '--font-besley',
   adjustFontFallback: false,
 })
  
@@ -31,14 +41,8 @@ const font_sans = Public_Sans({
   variable: '--font-public-sans',
 })
 
-
-import { EXAMPLE_PATH, CMS_NAME } from '@/lib/constants'
-
-export const metadata = {
-  title: `Next.js and ${CMS_NAME} Example`,
-  description: `This is a blog built with Next.js and ${CMS_NAME}.`,
-}
-
+import { EXAMPLE_PATH, CMS_NAME, BASE_URL } from '@/lib/constants'
+import Head from 'next/head'
 
 function Footer() {
   return (
