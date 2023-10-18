@@ -1,13 +1,13 @@
 import { ImageResponse } from 'next/server';
 // App router includes @vercel/og.
 // No need to install it.
-// import Logo from '../../logo'
 //import DateComponent from '../../date'
 import Date from '../../date'
 // import ContentfulImage from '../../../lib/contentful-image'
 import { ogImageParams } from '@/lib/constants';
 import LogoWide from '@/app/logo-white';
 import TextureTriangles from '@/app/texture-triangles';
+import Avatar from '@/app/avatar';
 
 export const runtime = 'edge';
  
@@ -24,11 +24,6 @@ export async function GET(request: Request) {
     const publishDate =
       searchParams.get('date') || 'today';
 
-    // const hasDate = searchParams.get('date')
-    // const articleDate = hasDate
-    //   ? searchParams.get('date')?.toString
-    //   : 'Today'
-    //const hasImage = searchParams.has('')
     const defaultImageRemote = `https://images.ctfassets.net/col7w9urljg1/3SkQKUUagpav7v1FkFtJ50/7e72bfa8c1d8bf66a8e94eaa883b9889/Bonneville_Flats_Sunset-18.jpg?${ogImageParams}`
     const hasImage = searchParams.has('entryImage'); // passed from slug route
     const entryImage = hasImage
@@ -65,7 +60,6 @@ export async function GET(request: Request) {
             flexDirection: 'row',
             flexWrap: 'nowrap',
             backgroundColor: 'black',
-            // backgroundImage: 'url(`${imageData}`)',
             backgroundPosition: 'center center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',

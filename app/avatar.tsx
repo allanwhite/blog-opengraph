@@ -2,9 +2,11 @@ import ContentfulImage from '@/lib/contentful-image'
 
 export default function Avatar({
   name,
+  role,
   picture,
 }: {
   name: string
+  role: string
   picture: any
 }) {
   return (
@@ -18,7 +20,10 @@ export default function Avatar({
           src={picture.url}
         />
       </div>
-      <div className="text-xl font-bold">{name}</div>
+      <div className="flex items-start flex-col leading-tight">
+        <div className="text-lg font-bold">{name}</div>
+        <div className="text-md font-normal">{role}</div>
+      </div>
     </div>
   )
 }

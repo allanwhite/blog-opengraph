@@ -89,7 +89,7 @@ export default async function PostPage({
         </h1>
         <div className="hidden md:block md:mb-12">
           {post.author && (
-            <Avatar name={post.author.name} picture={post.author.picture} />
+            <Avatar name={post.author.name} picture={post.author.picture} role={post.author.role} />
           )}
         </div>
         <div className="mb-8 md:mb-16 sm:mx-0 aspect-video object-cover overflow-hidden rounded-lg">
@@ -98,7 +98,7 @@ export default async function PostPage({
         <div className="max-w-2xl mx-auto">
           <div className="block md:hidden mb-6">
             {post.author && (
-              <Avatar name={post.author.name} picture={post.author.picture} />
+              <Avatar name={post.author.name} picture={post.author.picture} role={post.author.role} />
             )}
           </div>
           <div className="mb-6 text-lg">

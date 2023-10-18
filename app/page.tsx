@@ -45,30 +45,6 @@ export const metadata = {
   },
 }
 
-// export const metadata = {
-//   openGraph: {
-//     title: 'Next.js',
-//     description: 'The React Framework for the Web',
-//     url: 'https://nextjs.org',
-//     siteName: 'Next.js',
-//     images: [
-//       {
-//         url: 'https://nextjs.org/og.png',
-//         width: 800,
-//         height: 600,
-//       },
-//       {
-//         url: 'https://nextjs.org/og-alt.png',
-//         width: 1800,
-//         height: 1600,
-//         alt: 'My custom alt',
-//       },
-//     ],
-//     locale: 'en_US',
-//     type: 'website',
-//   },
-// }
-
 function Intro() {
   return (
     <section className="flex-col md:flex-row flex items-center md:justify-between mt-16 mb-16 md:mb-12">
@@ -129,7 +105,7 @@ function HeroPost({
         </div>
         <div>
           <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
-          {author && <Avatar name={author.name} picture={author.picture} />}
+          {author && <Avatar name={author.name} picture={author.picture} role={author.role} />}
         </div>
       </div>
     </section>
