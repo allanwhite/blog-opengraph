@@ -1,6 +1,9 @@
 import Image from 'next/image'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { BLOCKS } from '@contentful/rich-text-types'
+//import CoverImage from '@/app/cover-image'
+import RtImage from '@/app/rt-image'
+import PostImage from '@/app/rt-image'
 
 interface Asset {
   sys: {
@@ -31,7 +34,15 @@ function RichTextAsset({
   const asset = assets?.find((asset) => asset.sys.id === id)
 
   if (asset?.url) {
-    return <Image src={asset.url} layout="fill" alt={asset.description} />
+    // using a dedicated component for body images
+    //return <Image src={asset.url} layout="fill" alt={asset.description} />
+    return (
+      <PostImage
+        url={asset.url}
+        title={asset.description}
+      />
+    )
+    // return <img src={asset.url} alt={asset.description} />
   }
 
   return null

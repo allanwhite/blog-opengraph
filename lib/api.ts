@@ -1,27 +1,53 @@
 const POST_GRAPHQL_FIELDS = `
   slug
+  date
   title
+  excerpt
   coverImage {
     url
+    title
+    width
+    height
+    description
   }
-  date
   author {
     name
     role
     picture {
       url
+      title
+      width
+      height
+      description
     }
   }
-  excerpt
   content {
     json
     links {
+      entries {
+        block {
+          sys {
+            id
+          }
+          __typename
+          ... on Post {
+            title
+            slug
+            content {
+              json
+            }
+          }
+        }
+      }
       assets {
         block {
           sys {
             id
           }
           url
+          title
+          width
+          height
           description
         }
       }
