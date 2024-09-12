@@ -95,7 +95,7 @@ export default async function PostPage({
         <div className="mb-8 md:mb-16 sm:mx-0 aspect-video object-cover overflow-hidden rounded-lg">
           <CoverImage title={post.title} url={post.coverImage.url} />
         </div>
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-3xl mx-auto">
           <div className="block md:hidden mb-6">
             {post.author && (
               <Avatar name={post.author.name} picture={post.author.picture} role={post.author.role} />
@@ -106,7 +106,7 @@ export default async function PostPage({
           </div>
         </div>
 
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-3xl mx-auto">
           <div className="prose">
             <Markdown content={post.content} />
           </div>

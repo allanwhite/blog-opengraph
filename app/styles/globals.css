@@ -5,3 +5,37 @@
 .logo-wide {
     @apply w-52 md:w-48;
 }
+.prose {
+    max-width: unset;
+}
+.prose :where(code):not(:where([class~="not-prose"] *))::before {
+    content: "`";
+    display: none;
+}
+.prose :where(code):not(:where([class~="not-prose"] *))::after {
+    content: "`";
+    display: none;
+}
+.prose li p {
+    margin: 0; 
+    margin-bottom: 0.5rem;
+}
+/* .prose code {
+    font-weight: unset;
+} */
+p code {
+    /* display: block; */
+    /* white-space: nowrap; */
+    /* width: 100%; */
+    background: #f7f9fa;
+    border-radius: 2px;
+    border: 1px solid #dbe3e7;
+    font-size: 0.9rem;
+    font-weight: 500;
+    max-width: 78ch;
+    overflow-y: auto;
+    overflow: auto;
+    padding: 0 0.4em;
+    word-wrap: break-word;
+}
+
